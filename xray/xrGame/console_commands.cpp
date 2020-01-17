@@ -1838,9 +1838,9 @@ void CCC_RegisterCommands()
 
 	CMD4(CCC_Float,				"hud_fov",				&psHUD_FOV,		0.1f, 1.0f);
 
-#ifdef DEBUG
-	CMD4(CCC_Float,				"fov",					&g_fov,			5.0f,	180.0f);
-#endif // DEBUG
+//#ifdef DEBUG
+	CMD4(CCC_Float,				"cam_fov",				&g_fov,			5.0f,	180.0f);
+//#endif // DEBUG
 
 	// Demo
 #if 1//ndef MASTER_GOLD
