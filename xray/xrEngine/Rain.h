@@ -66,6 +66,15 @@ private:
 	Particle*						particle_active;
 	Particle*						particle_idle;
 
+	//Rain params
+	bool  m_bWinterMode;
+	float drop_speed_min;
+	float drop_speed_max;
+	float drop_length;
+	float drop_width;
+	float drop_angle;
+	float drop_max_wind_vel;
+
 	// Sounds
 	ref_sound						snd_Ambient;
 
