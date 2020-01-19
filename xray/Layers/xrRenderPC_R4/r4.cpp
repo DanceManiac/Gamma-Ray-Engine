@@ -1006,6 +1006,9 @@ HRESULT	CRender::shader_compile			(
 	char							c_ssao			[32];
 	char							c_sun_quality	[32];
 
+	// DWM: For sslr setting's
+	char							c_dt_ssr_samp	[32];
+
 	char	sh_name[MAX_PATH] = "";
 	
 	for (u32 i=0; i<m_ShaderOptions.size(); ++i)
@@ -1327,6 +1330,15 @@ HRESULT	CRender::shader_compile			(
 	}
 	sh_name[len]='0'+char(o.dx10_gbuffer_opt); ++len;
 
+	// DWM: For sslr setting's
+	{
+		sprintf_s(c_dt_ssr_samp, "%d", dt_ssr_samp);
+		defines[def_it].Name = "SSR_SAMPLES";
+		defines[def_it].Definition = c_dt_ssr_samp;
+		def_it++;
+		sh_name[len] = '0' + char(dt_ssr_samp); ++len;
+	}
+
    //R_ASSERT						( !o.dx10_sm4_1 );
    if( o.dx10_sm4_1 )
    {
@@ -1563,6 +1575,17 @@ HRESULT	CRender::shader_compile			(
 
 static inline bool match_shader		( LPCSTR const debug_shader_id, LPCSTR const full_shader_id, LPCSTR const mask, size_t const mask_length )
 {
+	return true;
+}
+
+static inline bool match_shader_id	( LPCSTR const debug_shader_id, LPCSTR const full_shader_id, FS_FileSet const& file_set, string_path& result )
+{
+	return (strstr(Core.Params,"-noscache")) ? (true) : (false);
+}
+
+/*
+static inline bool match_shader		( LPCSTR const debug_shader_id, LPCSTR const full_shader_id, LPCSTR const mask, size_t const mask_length )
+{
 	u32 const full_shader_id_length	= xr_strlen( full_shader_id );
 	R_ASSERT2				(
 		full_shader_id_length == mask_length,
@@ -1624,3 +1647,4 @@ static inline bool match_shader_id	( LPCSTR const debug_shader_id, LPCSTR const 
 #endif // #ifdef DEBUG
 #endif// #if 1
 }
+*/
