@@ -121,6 +121,7 @@ public:
 class ENGINE_API	CEnvDescriptor
 {
 public:
+
 	float				exec_time;
 	float				exec_time_loaded;
 
@@ -337,6 +338,8 @@ public:
 
 	bool					m_paused;
 #endif // #ifdef _EDITOR
+
+	bool useDynamicSunDir;
 
 	CInifile*				m_ambients_config;
 	CInifile*				m_sound_channels_config;
