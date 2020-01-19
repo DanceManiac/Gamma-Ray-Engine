@@ -1307,6 +1307,7 @@ void CApplication::Level_Scan()
 
 void gen_logo_name(string_path& dest, LPCSTR level_name, int num)
 {
+	//if (CEffect_Rain && m_bWinterMode == false)
 	strconcat	(sizeof(dest), dest, "intro\\intro_", level_name);
 	
 	u32 len = xr_strlen(dest);
