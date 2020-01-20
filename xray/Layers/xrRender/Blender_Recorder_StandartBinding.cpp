@@ -329,7 +329,6 @@ static class cl_screen_res : public R_constant_setup
 	}
 }	binder_screen_res;
 
-
 // Standart constant-binding
 void	CBlender_Compile::SetMapping	()
 {
