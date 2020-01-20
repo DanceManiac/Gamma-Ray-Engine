@@ -23,6 +23,8 @@
 #include "hit_memory_manager.h"
 #include "enemy_manager.h"
 #include "memory_space_impl.h"
+#include <bitset>
+#include <limits>
 
 #pragma warning(push)
 #pragma warning(disable:4995)
