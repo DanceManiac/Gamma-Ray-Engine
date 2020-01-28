@@ -251,7 +251,7 @@ float		ps_current_detail_density = 0.6;
 float		ps_current_detail_scale = 1.f;
 
 
-
+Flags32 ps_actor_shadow_flags = { 0 };
 //- Mad Max
 float		ps_r2_gloss_factor			= 4.0f;
 //- Mad Max
@@ -805,6 +805,7 @@ void		xrRender_initconsole	()
 	CMD4(CCC_Float,		"r2_zfill_depth",		&ps_r2_zfill,				.001f,	.5f		);
 	CMD3(CCC_Mask,		"r2_allow_r1_lights",	&ps_r2_ls_flags,			R2FLAG_R1LIGHTS	);
 
+	CMD3(CCC_Mask,		"r__actor_shadow",		&ps_actor_shadow_flags,		RFLAG_ACTOR_SHADOW);  //Swartz
 	//- Mad Max
 	CMD4(CCC_Float,		"r2_gloss_factor",		&ps_r2_gloss_factor,		.0f,	10.f	);
 	//- Mad Max

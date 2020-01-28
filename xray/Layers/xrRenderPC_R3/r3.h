@@ -341,6 +341,7 @@ public:
 	virtual void					rmFar						();
 	virtual void					rmNormal					();
 
+	virtual							u32 active_phase			() { return phase; };
 	// Constructor/destructor/loader
 	CRender							();
 	virtual ~CRender				();
