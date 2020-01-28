@@ -178,9 +178,9 @@ Flags32		ps_r2_ls_flags_ext			= {
 int			ps_no_scale_on_fade = 0;						//Alundaio
 float		ps_r2_df_parallax_h			= 0.02f;
 float		ps_r2_df_parallax_range		= 75.f;
-float		ps_r2_tonemap_middlegray	= 1.f;				// r2-only
+float		ps_r2_tonemap_middlegray	= 0.95f;			// r2-only
 float		ps_r2_tonemap_adaptation	= 1.f;				// r2-only
-float		ps_r2_tonemap_low_lum		= 0.0001f;			// r2-only
+float		ps_r2_tonemap_low_lum		= 0.0035f;			// r2-only
 float		ps_r2_tonemap_amount		= 0.7f;				// r2-only
 float		ps_r2_ls_bloom_kernel_g		= 3.f;				// r2-only
 float		ps_r2_ls_bloom_kernel_b		= .7f;				// r2-only
@@ -213,7 +213,7 @@ float		ps_r2_sun_depth_far_bias	= -0.00002f;			// -0.0000f
 float		ps_r2_sun_depth_near_scale	= 1.0000f;			// 1.00001f
 float		ps_r2_sun_depth_near_bias	= 0.00001f;		// -0.00005f
 float		ps_r2_sun_lumscale			= 1.0f;				// 1.0f
-float		ps_r2_sun_lumscale_hemi		= 1.0f;				// 1.0f
+float		ps_r2_sun_lumscale_hemi		= 0.6f;				// 1.0f
 float		ps_r2_sun_lumscale_amb		= 1.0f;
 float		ps_r2_gmaterial				= 2.2f;				// 
 float		ps_r2_zfill					= 0.25f;				// .1f
@@ -228,7 +228,7 @@ float		ps_r2_lt_smooth				= 1.f;				// 1.f
 float		ps_r2_slight_fade			= 0.5f;				// 1.f
 
 //	x - min (0), y - focus (1.4), z - max (100)
-Fvector3	ps_r2_dof					= Fvector3().set(-1.25f, 1.4f, 600.f);
+Fvector3	ps_r2_dof					= Fvector3().set(-1.25f, 1.4f, 10000.f);
 float		ps_r2_dof_sky				= 30;				//	distance to sky
 float		ps_r2_dof_kernel_size		= 5.0f;						//	7.0f
 
