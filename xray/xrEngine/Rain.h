@@ -66,8 +66,6 @@ private:
 	Particle*						particle_active;
 	Particle*						particle_idle;
 
-	//Rain params
-	bool  m_bWinterMode;
 	float drop_speed_min;
 	float drop_speed_max;
 	float drop_length;
@@ -99,6 +97,9 @@ public:
 
 	void							Render			();
 	void							OnFrame			();
+
+	//G.S.W.R Winter Mode
+	bool							m_bWinterMode;
 };
 
 #endif //RainH

@@ -33,7 +33,7 @@ const float particles_time		= .3f;
 CEffect_Rain::CEffect_Rain()
 {
 	state							= stIdle;
-	
+
 	m_bWinterMode = READ_IF_EXISTS(pSettings, r_bool, "environment", "winter_mode", false);
 
 	if (m_bWinterMode == false)
