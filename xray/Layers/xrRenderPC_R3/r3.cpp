@@ -277,7 +277,7 @@ void					CRender::create					()
 	o.depth16			= (strstr(Core.Params,"-depth16"))?		TRUE	:FALSE	;
 	o.noshadows			= (strstr(Core.Params,"-noshadows"))?	TRUE	:FALSE	;
 	o.Tshadows			= (strstr(Core.Params,"-tsh"))?			TRUE	:FALSE	;
-	o.mblur				= (strstr(Core.Params,"-mblur"))?		TRUE	:FALSE	;
+	o.mblur				= ps_r2_ls_flags.test(R2FLAG_MBLUR);
 	o.distortion_enabled= (strstr(Core.Params,"-nodistort"))?	FALSE	:TRUE	;
 	o.distortion		= o.distortion_enabled;
 	o.disasm			= (strstr(Core.Params,"-disasm"))?		TRUE	:FALSE	;
@@ -747,7 +747,7 @@ static HRESULT create_shader				(
 		ID3DShaderReflection *pReflection = 0;
 
 #ifdef USE_DX11
-        _result			= D3DReflect( buffer, buffer_size, guidShaderReflection, (void**)&pReflection);
+        _result			= D3DReflect( buffer, buffer_size, IID_ID3DShaderReflection, (void**)&pReflection);
 #else
 		_result			= D3D10ReflectShader( buffer, buffer_size, &pReflection);
 #endif
@@ -783,7 +783,7 @@ static HRESULT create_shader				(
 
 		ID3DShaderReflection *pReflection = 0;
 #ifdef USE_DX11
-		_result			= D3DReflect(buffer, buffer_size, guidShaderReflection, (void**)&pReflection);
+		_result			= D3DReflect(buffer, buffer_size, IID_ID3DShaderReflection, (void**)&pReflection);
 #else
 		_result			= D3D10ReflectShader( buffer, buffer_size, &pReflection);
 #endif
@@ -831,7 +831,7 @@ static HRESULT create_shader				(
 		ID3DShaderReflection *pReflection = 0;
 
 #ifdef USE_DX11
-		_result			= D3DReflect(buffer, buffer_size, guidShaderReflection, (void**)&pReflection);
+		_result			= D3DReflect(buffer, buffer_size, IID_ID3DShaderReflection, (void**)&pReflection);
 #else
 		_result			= D3D10ReflectShader( buffer, buffer_size, &pReflection);
 #endif
