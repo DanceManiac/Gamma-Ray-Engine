@@ -1076,6 +1076,9 @@
     <ClCompile Include="..\xrRender\SkeletonX.cpp">
       <Filter>Refactored\Execution &amp; 3D\Visuals\Skeleton</Filter>
     </ClCompile>
+    <ClInclude Include="blender_ss_sunshafts.h">
+      <Filter>Shading templates</Filter>
+    </ClInclude>
     <ClCompile Include="..\xrRender\xr_effgamma.cpp">
       <Filter>Refactored\Execution &amp; 3D\Gamma</Filter>
     </ClCompile>
@@ -1136,8 +1139,17 @@
     <ClCompile Include="..\xrRender\dxUISequenceVideoItem.cpp">
       <Filter>Interfase implementations\UI\UISequenceVideoItem</Filter>
     </ClCompile>
+    <ClCompile Include="blender_ss_sunshafts.cpp">
+      <Filter>Shading templates</Filter>
+    </ClCompile>
+    <ClCompile Include="r2_rendertarget_phase_ss_sunshafts.cpp">
+      <Filter>Core_Target</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="todo.txt" />
+  </ItemGroup>
+   <ItemGroup>
+    <Natvis Include="..\..\TypeHelper.natvis" />
   </ItemGroup>
 </Project>

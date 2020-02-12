@@ -329,6 +329,7 @@
     <ClInclude Include="light_gi.h" />
     <ClInclude Include="Light_Render_Direct.h" />
     <ClInclude Include="light_smapvis.h" />
+    <ClInclude Include="blender_ss_sunshafts.h" />
     <ClInclude Include="r2.h" />
     <ClInclude Include="r2_rendertarget.h" />
     <ClInclude Include="r2_rendertarget_wallmarks.h" />
@@ -479,6 +480,7 @@
     <ClCompile Include="Light_Render_Direct_ComputeXFS.cpp" />
     <ClCompile Include="light_smapvis.cpp" />
     <ClCompile Include="light_vis.cpp" />
+	<ClCompile Include="blender_ss_sunshafts.cpp" />
     <ClCompile Include="r2.cpp" />
     <ClCompile Include="r2_blenders.cpp" />
     <ClCompile Include="r2_loader.cpp" />
@@ -504,6 +506,7 @@
     <ClCompile Include="r2_rendertarget_phase_smap_D.cpp" />
     <ClCompile Include="r2_rendertarget_phase_smap_S.cpp" />
     <ClCompile Include="r2_rendertarget_phase_ssao.cpp" />
+    <ClCompile Include="r2_rendertarget_phase_ss_sunshafts.cpp" />
     <ClCompile Include="r2_R_calculate.cpp" />
     <ClCompile Include="r2_R_lights.cpp" />
     <ClCompile Include="r2_R_render.cpp" />
