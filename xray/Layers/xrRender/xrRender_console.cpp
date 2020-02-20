@@ -261,6 +261,7 @@ float		ps_current_detail_scale = 1.f;
 //ogse sunshafts
 float		ps_r2_ss_sunshafts_length = 1.f;
 float		ps_r2_ss_sunshafts_radius = 1.f;
+float		droplets_power_debug = 1.f;
 
 Flags32 ps_actor_shadow_flags = { 0 };
 //- Mad Max
@@ -849,6 +850,7 @@ void		xrRender_initconsole	()
 	CMD4(CCC_Float,		"r2_sun_lumscale",		&ps_r2_sun_lumscale,		-1.0,	+3.0	);
 	CMD4(CCC_Float,		"r2_sun_lumscale_hemi",	&ps_r2_sun_lumscale_hemi,	0.0,	+3.0	);
 	CMD4(CCC_Float,		"r2_sun_lumscale_amb",	&ps_r2_sun_lumscale_amb,	0.0,	+3.0	);
+	CMD4(CCC_Float,		"r2_droplets_power_debug", &droplets_power_debug,	0.f, 1.5f		);
 
 	CMD3(CCC_Mask,		"r2_aa",				&ps_r2_ls_flags,			R2FLAG_AA);
 	CMD4(CCC_Float,		"r2_aa_kernel",			&ps_r2_aa_kernel,			0.3f,	0.7f	);

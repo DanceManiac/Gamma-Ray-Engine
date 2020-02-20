@@ -12,6 +12,7 @@
 #include "blender_luminance.h"
 #include "blender_ssao.h"
 #include "blender_ss_sunshafts.h"
+#include "blender_droplets.h"
 
 #include "../xrRender/dxRenderDeviceRender.h"
 
@@ -212,6 +213,7 @@ CRenderTarget::CRenderTarget		()
 	b_luminance						= xr_new<CBlender_luminance>			();
 	b_combine						= xr_new<CBlender_combine>				();
 	b_sunshafts						= new CBlender_sunshafts				();
+	b_droplets						= xr_new<CBlender_droplets>				();
 
 	//	NORMAL
 	{
@@ -259,6 +261,9 @@ CRenderTarget::CRenderTarget		()
 	}
 
 	s_sunshafts.create(b_sunshafts, "r2\\sunshafts");
+	s_droplets.create(b_droplets, "r2\\droplets");
+
+
 
 	// OCCLUSION
 	s_occq.create					(b_occq,		"r2\\occq");
@@ -647,6 +652,7 @@ CRenderTarget::~CRenderTarget	()
 	xr_delete					(b_accum_mask			);
 	xr_delete					(b_occq					);
 	xr_delete					(b_sunshafts			);
+	xr_delete					(b_droplets				);
 }
 
 void CRenderTarget::reset_light_marker( bool bResetStencil)
