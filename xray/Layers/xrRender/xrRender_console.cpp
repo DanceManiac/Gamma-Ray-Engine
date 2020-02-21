@@ -850,11 +850,8 @@ void		xrRender_initconsole	()
 	CMD4(CCC_Float,		"r2_sun_lumscale",		&ps_r2_sun_lumscale,		-1.0,	+3.0	);
 	CMD4(CCC_Float,		"r2_sun_lumscale_hemi",	&ps_r2_sun_lumscale_hemi,	0.0,	+3.0	);
 	CMD4(CCC_Float,		"r2_sun_lumscale_amb",	&ps_r2_sun_lumscale_amb,	0.0,	+3.0	);
-<<<<<<< HEAD
+
 	CMD4(CCC_Float,		"r2_droplets_power_debug", &droplets_power_debug,	0.f,	1.5f	);
-=======
-	CMD4(CCC_Float,		"r2_droplets_power_debug", &droplets_power_debug,	0.f, 1.5f		);
->>>>>>> origin/master
 
 	CMD3(CCC_Mask,		"r2_aa",				&ps_r2_ls_flags,			R2FLAG_AA);
 	CMD4(CCC_Float,		"r2_aa_kernel",			&ps_r2_aa_kernel,			0.3f,	0.7f	);
