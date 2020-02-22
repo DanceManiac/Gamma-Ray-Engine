@@ -32,7 +32,7 @@ public:
 	IBlender*					b_luminance;
 	IBlender*					b_combine;
 	IBlender*					b_sunshafts;
-	IBlender*					b_droplets;
+	IBlender*					b_rain_drops;
 
 #ifdef DEBUG
 	struct		dbg_line_t		{
@@ -94,8 +94,8 @@ private:
 	// OCCq
 	ref_shader					s_occq;
 	ref_shader					s_sunshafts;
-
-	ref_shader					s_droplets;
+	//Raindrops
+	ref_shader					s_rain_drops;
 
 
 
@@ -226,7 +226,7 @@ public:
 	void						phase_smap_spot_tsh		(light* L);
 	void						phase_accumulator		();
 	void						phase_vol_accumulator	();
-	void						phase_droplets			();
+	void						phase_rain_drops		();
 	void						shadow_direct			(light* L, u32 dls_phase);
 
 	bool						need_to_render_sunshafts();

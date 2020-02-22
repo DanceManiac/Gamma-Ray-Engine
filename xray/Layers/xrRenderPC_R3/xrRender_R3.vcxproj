@@ -356,6 +356,7 @@
     <ClInclude Include="r3_rendertarget_wallmarks.h" />
     <ClInclude Include="r3_R_sun_support.h" />
     <ClInclude Include="SMAP_Allocator.h" />
+    <ClInclude Include="blender_rain_drops.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -562,6 +563,8 @@
     <ClCompile Include="r3_R_rain.cpp" />
     <ClCompile Include="r3_R_render.cpp" />
     <ClCompile Include="r3_R_sun_support.cpp" />
+    <ClCompile Include="blender_rain_drops.cpp" />
+    <ClCompile Include="r3_rendertarget_phase_rain_drops.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Mixed|Win32'">Create</PrecompiledHeader>

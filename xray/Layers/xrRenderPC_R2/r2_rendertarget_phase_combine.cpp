@@ -236,7 +236,7 @@ void	CRenderTarget::phase_combine	()
 
 	if (!_menu_pp)
 	{
-		phase_droplets();
+		phase_rain_drops();
 	}
 
 	// Combine everything + perform AA
