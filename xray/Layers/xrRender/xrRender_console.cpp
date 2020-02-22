@@ -851,12 +851,10 @@ void		xrRender_initconsole	()
 	CMD4(CCC_Float,		"r2_sun_lumscale_hemi",	&ps_r2_sun_lumscale_hemi,	0.0,	+3.0	);
 	CMD4(CCC_Float,		"r2_sun_lumscale_amb",	&ps_r2_sun_lumscale_amb,	0.0,	+3.0	);
 
-	CMD4(CCC_Float,		"r2_droplets_power_debug", &droplets_power_debug,	0.f,	3.f		);
-
 	CMD3(CCC_Mask,		"r2_aa",				&ps_r2_ls_flags,			R2FLAG_AA);
 	CMD4(CCC_Float,		"r2_aa_kernel",			&ps_r2_aa_kernel,			0.3f,	0.7f	);
 	CMD3(CCC_Mask,		"r2_mblur_enable",		&ps_r2_ls_flags,			R2FLAG_MBLUR);
-	CMD4(CCC_Float,		"r2_mblur",				&ps_r2_mblur,				0.0f,	5.0f	);
+	CMD4(CCC_Float,		"r2_mblur",				&ps_r2_mblur,				0.0f,	2.5f	);
 
 	CMD3(CCC_Mask,		"r2_gi",				&ps_r2_ls_flags,			R2FLAG_GI);
 	CMD4(CCC_Float,		"r2_gi_clip",			&ps_r2_GI_clip,				EPS,	0.1f	);
@@ -928,6 +926,9 @@ void		xrRender_initconsole	()
 	CMD3(CCC_Mask,		"r2_detail_bump",				&ps_r2_ls_flags,			R2FLAG_DETAIL_BUMP);
 
 	CMD3(CCC_Token,		"r2_sun_quality",				&ps_r_sun_quality,			qsun_quality_token);
+	
+	//Raindrops
+	CMD4(CCC_Float,		"r2_rain_drops_power_debug",	&droplets_power_debug,		0.f, 3.f);
 
 	// DWM: DT SSR quality option
 	CMD3(CCC_Token,		"r4_ssr_samples",				&dt_ssr_samp,				qdt_ssr_samp_token);
