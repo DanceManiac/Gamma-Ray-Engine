@@ -261,7 +261,7 @@ float		ps_current_detail_scale = 1.f;
 //ogse sunshafts
 float		ps_r2_ss_sunshafts_length = 1.f;
 float		ps_r2_ss_sunshafts_radius = 1.f;
-float		droplets_power_debug = 1.f;
+float		droplets_power_debug = 0.f;
 
 Flags32 ps_actor_shadow_flags = { 0 };
 //- Mad Max

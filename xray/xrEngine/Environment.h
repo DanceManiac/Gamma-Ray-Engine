@@ -163,6 +163,7 @@ public:
 	Fvector3			sun_dir		;
 	float				m_fSunShaftsIntensity;
 	float				m_fWaterIntensity;
+	float				m_fDropletsIntensity;
 
 #ifdef TREE_WIND_EFFECT
 	float m_fTreeAmplitudeIntensity;

@@ -233,6 +233,7 @@ CEnvDescriptor::CEnvDescriptor	(shared_str const& identifier) :
 
 	m_fSunShaftsIntensity = 0;
 	m_fWaterIntensity = 1;
+	m_fDropletsIntensity = 0; // Max - 3
 
 #ifdef TREE_WIND_EFFECT
 	m_fTreeAmplitudeIntensity = 0.01;
@@ -303,6 +304,9 @@ void CEnvDescriptor::load	(CEnvironment& environment, CInifile& config)
 
 	if (config.line_exist(m_identifier.c_str(),"water_intensity"))
 		m_fWaterIntensity = config.r_float(m_identifier.c_str(),"water_intensity");
+
+	if (config.line_exist(m_identifier.c_str(), "droplets_intensity"))
+		m_fDropletsIntensity = config.r_float(m_identifier.c_str(), "droplets_intensity");
 
 #ifdef TREE_WIND_EFFECT
 	if (config.line_exist(m_identifier.c_str(), "tree_amplitude_intensity"))
@@ -454,6 +458,7 @@ void CEnvDescriptorMixer::lerp	(CEnvironment* , CEnvDescriptor& A, CEnvDescripto
 
 	m_fSunShaftsIntensity = fi * A.m_fSunShaftsIntensity + f * B.m_fSunShaftsIntensity;
 	m_fWaterIntensity		=	fi*A.m_fWaterIntensity + f*B.m_fWaterIntensity;
+	m_fDropletsIntensity = fi * A.m_fDropletsIntensity + f * B.m_fDropletsIntensity;
 
 #ifdef TREE_WIND_EFFECT
 	m_fTreeAmplitudeIntensity = fi * A.m_fTreeAmplitudeIntensity + f * B.m_fTreeAmplitudeIntensity;
