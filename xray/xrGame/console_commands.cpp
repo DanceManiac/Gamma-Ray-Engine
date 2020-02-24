@@ -51,6 +51,8 @@
 
 #include "ai_debug_variables.h"
 #include "../xrphysics/console_vars.h"
+#include "../build_config_defines.h"
+
 #ifdef DEBUG
 #	include "PHDebug.h"
 #	include "ui/UIDebugFonts.h" 
@@ -212,6 +214,41 @@ public:
 };
 
 #endif // #ifdef DEBUG
+
+// g_spawn
+class CCC_Spawn : public IConsole_Command {
+public:
+	CCC_Spawn(LPCSTR N) : IConsole_Command(N) { };
+	virtual void Execute(LPCSTR args) {
+		if (!g_pGameLevel) return;
+
+		//#ifndef	DEBUG
+		if (GameID() != eGameIDSingle)
+		{
+			Msg("For this game type entity-spawning is disabled.");
+			return;
+		};
+		//#endif
+
+		if (!pSettings->section_exist(args))
+		{
+			Msg("! Section [%s] isn`t exist...", args);
+			return;
+		}
+
+		char	Name[128];	Name[0] = 0;
+		sscanf(args, "%s", Name);
+		Fvector pos = Actor()->Position();
+		pos.y += 3.0f;
+		Level().g_cl_Spawn(Name, 0xff, M_SPAWN_OBJECT_LOCAL, pos);
+	}
+	virtual void	Info(TInfo& I)
+	{
+		strcpy(I, "name,team,squad,group");
+	}
+};
+// g_spawn 
+
 // console commands
 class CCC_GameDifficulty : public CCC_Token {
 public:
@@ -1986,6 +2023,9 @@ CMD4(CCC_Integer,			"hit_anims_tune",						&tune_hit_anims,		0, 1);
 	CMD1(CCC_TimeFactor,	"time_factor");		
 #endif // MASTER_GOLD
 
+#ifdef MFS_DEVELOPER_CMD
+	CMD1(CCC_Spawn,		"g_spawn");
+#endif // MFS_DEVELOPER_CMD
 	CMD3(CCC_Mask,		"g_autopickup",			&psActorFlags,	AF_AUTOPICKUP);
 	CMD3(CCC_Mask,		"g_dynamic_music",		&psActorFlags,	AF_DYNAMIC_MUSIC);
 	CMD3(CCC_Mask,		"g_important_save",		&psActorFlags,	AF_IMPORTANT_SAVE);
