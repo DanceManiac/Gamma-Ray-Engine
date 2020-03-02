@@ -411,7 +411,7 @@ void CRenderDevice::Run			()
 //	InitializeCriticalSection	(&mt_csLeave);
 	mt_csEnter.Enter			();
 	mt_bMustExit				= FALSE;
-	thread_spawn				(mt_Thread,"X-RAY Secondary thread",0,0);
+	thread_spawn				(mt_Thread,"X-RAY Secondary thread",0,this);
 
 	// Message cycle
 	seqAppStart.Process			(rp_AppStart);

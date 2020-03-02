@@ -18,6 +18,7 @@ CUIBoosterInfo::CUIBoosterInfo()
 	m_booster_satiety = NULL;
 	m_booster_anabiotic = NULL;
 	m_booster_time = NULL;
+	m_booster_thirst = NULL;
 }
 
 CUIBoosterInfo::~CUIBoosterInfo()
@@ -27,6 +28,7 @@ CUIBoosterInfo::~CUIBoosterInfo()
 	xr_delete(m_booster_anabiotic);
 	xr_delete(m_booster_time);
 	xr_delete(m_Prop_line);
+	xr_delete(m_booster_thirst);
 }
 
 LPCSTR boost_influence_caption[] =
@@ -79,6 +81,14 @@ void CUIBoosterInfo::InitFromXml(CUIXml& xml)
 	m_booster_satiety->SetAutoDelete(false);
 	LPCSTR name = CStringTable().translate("ui_inv_satiety").c_str();
 	m_booster_satiety->SetCaption(name);
+	xml.SetLocalRoot( base_node );
+
+	//M.F.S. Team Thirst
+	m_booster_thirst = xr_new<UIBoosterInfoItem>();
+	m_booster_thirst->Init(xml, "boost_thirst");
+	m_booster_thirst->SetAutoDelete(false);
+	name = CStringTable().translate("ui_inv_thirst").c_str();
+	m_booster_thirst->SetCaption(name);
 	xml.SetLocalRoot( base_node );
 
 	m_booster_anabiotic = xr_new<UIBoosterInfoItem>();
@@ -177,6 +187,22 @@ void CUIBoosterInfo::SetInfo( shared_str const& section )
 
 			h += m_booster_satiety->GetWndSize().y;
 			AttachChild(m_booster_satiety);
+		}
+	}
+
+//M.F.S. Team Thirst
+	if (pSettings->line_exist(section.c_str(), "eat_thirst"))
+	{
+		val = pSettings->r_float(section, "eat_thirst");
+		if (!fis_zero(val))
+		{
+			m_booster_thirst->SetValue(val);
+			pos.set(m_booster_thirst->GetWndPos());
+			pos.y = h;
+			m_booster_thirst->SetWndPos(pos);
+
+			h += m_booster_thirst->GetWndSize().y;
+			AttachChild(m_booster_thirst);
 		}
 	}
 

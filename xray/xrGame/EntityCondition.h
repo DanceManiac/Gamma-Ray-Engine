@@ -68,6 +68,7 @@ struct SMedicineInfluenceValues{
 	float fAlcohol;
 	float fTimeTotal;
 	float fTimeCurrent;
+	float fThirst;
 
 	SMedicineInfluenceValues():fTimeCurrent(-1.0f){}
 	bool InProcess (){return fTimeCurrent>0.0f;}
@@ -110,6 +111,7 @@ public:
 	IC float				GetRadiation			() const			{return m_fRadiation;}
 	IC float				GetPsyHealth			() const			{return m_fPsyHealth;}
 	IC float				GetSatiety				() const			{return 1.0f;}	
+	IC float				GetThirst				() const			{ return 1.0f; }
 
 	IC float 				GetEntityMorale			() const			{return m_fEntityMorale;}
 
@@ -118,6 +120,7 @@ public:
 	virtual bool 			IsLimping				() const;
 
 	virtual void			ChangeSatiety			(const float value)		{};
+	virtual void			ChangeThirst			(const float value)		{};
 	void 					ChangeHealth			(const float value);
 	void 					ChangePower				(const float value);
 	void 					ChangeRadiation			(const float value);

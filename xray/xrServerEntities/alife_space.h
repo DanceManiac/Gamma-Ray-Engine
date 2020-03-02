@@ -115,6 +115,7 @@ namespace ALife {
 		eBleedingRestoreSpeed,
 		eRadiationRestoreSpeed,
 		eRestoreTypeMax,
+		eThirstRestoreSpeed,
 	};
 
 	enum ETakeType {
