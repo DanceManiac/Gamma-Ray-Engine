@@ -49,7 +49,6 @@ public:
 	IBlender*					b_ssao;
 	IBlender*					b_ssao_msaa[8];
 	IBlender*					b_sunshafts;
-	IBlender*					b_rain_drops;
 
     // compute shader for hdao
     IBlender*                   b_hdao_cs;
@@ -125,7 +124,7 @@ private:
 
 	ref_shader					s_sunshafts;
 	// RAIN DROPS
-	ref_shader					s_rain_drops;
+	//ref_shader					s_rain_drops;
 
 	// SSAO
 	ref_rt						rt_ssao_temp;
@@ -205,6 +204,8 @@ private:
 	ref_shader				s_combine;
    ref_shader				s_combine_msaa[8];
 	ref_shader				s_combine_volumetric;
+	ref_geom				g_rain_drops;
+	ref_shader				s_rain_drops;
 public:
 	ref_shader				s_postprocess;
    ref_shader           s_postprocess_msaa;
@@ -259,7 +260,6 @@ public:
 	bool						u_need_CM				();
 	BOOL						u_DBT_enable			(float zMin, float zMax);
 	void						u_DBT_disable			();
-	void						phase_rain_drops		();
 
 	void						phase_sunshafts			();
 	void						phase_scene_prepare		();
@@ -277,6 +277,7 @@ public:
 	void						phase_smap_spot_tsh		(light* L);
 	void						phase_accumulator		();
 	void						phase_vol_accumulator	();
+	void 						PhaseRainDrops			();
 	void						shadow_direct			(light* L, u32 dls_phase);
 
 	//	Generates min/max sm

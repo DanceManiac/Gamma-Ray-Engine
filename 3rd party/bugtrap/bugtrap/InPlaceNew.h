@@ -14,7 +14,6 @@
 
 #pragma once
 
-#define _NEW_
 #ifndef _NEW_
 
 /**
