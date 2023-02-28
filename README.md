@@ -4,4 +4,4 @@ XRAY 1.6
 ========
 
 Тест Appveyor CI"# Gamma-Ray-Engine" 
-Тест
+Тест2
